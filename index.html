@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurelia Jewellery | Luxury Jewellery</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #222;
+        }
+
+        .navbar {
+            background: #111;
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            color: #d4af37 !important;
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        .nav-link {
+            color: white !important;
+            margin-left: 12px;
+        }
+
+        .nav-link:hover {
+            color: #d4af37 !important;
+        }
+
+        .hero {
+            min-height: 680px;
+            background:
+                linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.65)),
+                url("https://i.pinimg.com/736x/4e/22/bc/4e22bc1de0f601d2735697245a92f774.jpg")
+                center/cover;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 65px;
+        }
+
+        .gold {
+            color: #d4af37;
+        }
+
+        .btn-gold {
+            background: #d4af37;
+            color: #111;
+            border: none;
+            padding: 13px 30px;
+            font-weight: 600;
+        }
+
+        .btn-gold:hover {
+            background: #b89525;
+            color: white;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+        }
+
+        .category-card {
+            height: 370px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .4s;
+        }
+
+        .category-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .category-name {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 25px;
+            color: white;
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            background: linear-gradient(transparent, rgba(0,0,0,.85));
+        }
+
+        .product-card {
+            border: none;
+            box-shadow: 0 5px 25px rgba(0,0,0,.08);
+            transition: .3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .product-card img {
+            height: 350px;
+            object-fit: cover;
+        }
+
+        .price {
+            color: #b89525;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .luxury-section {
+            
+            background: #111;
+            color: white;
+            padding: 100px 20px;
+        }
+
+        .review {
+            background: #f8f4e9;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        footer {
+            background: #111;
+            color: #aaa;
+            padding: 60px 0 20px;
+        }
+
+        footer h4 {
+            color: #d4af37;
+            font-family: 'Playfair Display', serif;
+        }
+
+        footer a {
+            color: #aaa;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #d4af37;
+        }
+
+        @media(max-width: 768px) {
+            .hero h1 {
+                font-size: 42px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+
+        <a class="navbar-brand" href="index.html">
+            AURELIA
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="shop.html">Shop</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="container">
+
+        <div class="col-lg-7">
+
+            <p class="gold text-uppercase">
+                Fine Jewellery Collection
+            </p>
+
+            <h1>
+                Timeless Beauty,
+                Crafted For You
+            </h1>
+
+            <p class="lead">
+                Discover elegant jewellery designed to celebrate
+                life's most beautiful moments.
+            </p>
+
+            <a href="shop.html" class="btn btn-gold mt-3">
+                Explore Collection
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <p class="gold">OUR COLLECTION</p>
+
+            <h2 class="section-title">
+                Shop By Category
+            </h2>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-3">
+
+                <div class="category-card">
+
+                    <img src="https://i.pinimg.com/736x/3d/e6/a8/3de6a8019ebdeb77754bc2583fca5189.jpg">
+
+                    <div class="category-name ">
+                        Rings
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-3">
+
+                <div class="category-card">
+
+                    <img src="https://i.pinimg.com/1200x/59/43/c5/5943c5a834103730f505baa5f5d151f8.jpg">
+
+                    <div class="category-name">
+                        Necklaces
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-3">
+
+                <div class="category-card">
+
+                    <img src="https://i.pinimg.com/736x/bf/d9/5d/bfd95d80369e6de665d9d6c988426400.jpg">
+
+                    <div class="category-name">
+                        Earrings
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-3">
+
+                <div class="category-card">
+
+                    <img src="https://i.pinimg.com/1200x/61/ec/a0/61eca09fc78ae22a091c86ed1bc2c69f.jpg">
+
+                    <div class="category-name">
+                        Bracelets
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURED PRODUCTS -->
+<section class="py-5 bg-light">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <p class="gold">BEST SELLERS</p>
+
+            <h2 class="section-title">
+                Featured Jewellery
+            </h2>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <!-- Product 1 -->
+            <div class="col-md-3">
+
+                <div class="card product-card">
+
+                    <img src="https://i.pinimg.com/1200x/b6/39/5e/b6395e6f2a47e0146840fd8ea2c6bcda.jpg"
+                         class="card-img-top">
+
+                    <div class="card-body text-center font-family;">
+
+                        <h5>Diamond Ring</h5>
+
+                        <p class="price">
+                            ₹24,999
+                        </p>
+
+                        <a href="shop.html"
+                           class="btn btn-gold">
+                            Shop Now
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 2 -->
+            <div class="col-md-3">
+
+                <div class="card product-card">
+
+                    <img src="https://i.pinimg.com/736x/34/d9/f1/34d9f1c8602dd0ee979dfd0c29a101df.jpg"
+                         class="card-img-top">
+
+                    <div class="card-body text-center">
+
+                        <h5>Gold Necklace</h5>
+
+                        <p class="price">
+                            ₹34,999
+                        </p>
+
+                        <a href="shop.html"
+                           class="btn btn-gold">
+                            Shop Now
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 3 -->
+            <div class="col-md-3">
+
+                <div class="card product-card">
+
+                    <img src="https://i.pinimg.com/736x/e8/42/2f/e8422f983b58638abdc24126aad58ec6.jpg"
+                         class="card-img-top">
+
+                    <div class="card-body text-center">
+
+                        <h5>Elegant Earrings</h5>
+
+                        <p class="price">
+                            ₹12,999
+                        </p>
+
+                        <a href="shop.html"
+                           class="btn btn-gold">
+                            Shop Now
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 4 -->
+            <div class="col-md-3">
+
+                <div class="card product-card">
+
+                    <img src="https://i.pinimg.com/736x/60/93/3d/60933d245cde3279e44fca0439eb5357.jpg"
+                         class="card-img-top">
+
+                    <div class="card-body text-center">
+
+                        <h5>Gold Bracelet</h5>
+
+                        <p class="price">
+                            ₹18,999
+                        </p>
+
+                        <a href="shop.html"
+                           class="btn btn-gold">
+                            Shop Now
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- LUXURY BANNER -->
+<section class="luxury-section text-center">
+
+    <div class="container">
+
+        <p class="gold">
+            AURELIA JEWELLERY
+        </p>
+
+        <h2 class="section-title">
+            Jewellery That Tells Your Story
+        </h2>
+
+        <p class="mt-3">
+            Elegant designs, timeless craftsmanship and
+            unforgettable beauty.
+        </p>
+
+        <a href="shop.html"
+           class="btn btn-gold mt-3">
+            Discover More
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- REVIEWS -->
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <p class="gold">
+                CUSTOMER LOVE
+            </p>
+
+            <h2 class="section-title">
+                What Our Customers Say
+            </h2>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+
+                <div class="review">
+
+                    <h5 class="gold">
+                        ★★★★★
+                    </h5>
+
+                    <p>
+                        "The ring was absolutely beautiful.
+                        The quality exceeded my expectations."
+                    </p>
+
+                    <strong>
+                        — Anjali
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="review">
+
+                    <h5 class="gold">
+                        ★★★★★
+                    </h5>
+
+                    <p>
+                        "Beautiful packaging and excellent
+                        jewellery. Highly recommended."
+                    </p>
+
+                    <strong>
+                        — Meera
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="review">
+
+                    <h5 class="gold">
+                        ★★★★★
+                    </h5>
+
+                    <p>
+                        "A perfect place to find elegant
+                        jewellery for special occasions."
+                    </p>
+
+                    <strong>
+                        — Priya
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+
+                <h4>
+                    AURELIA JEWELLERY
+                </h4>
+
+                <p>
+                    Timeless jewellery crafted with elegance,
+                    passion and attention to detail.
+                </p>
+
+            </div>
+
+
+            <div class="col-md-2">
+
+                <h4>Links</h4>
+
+                <p>
+                    <a href="index.html">Home</a>
+                </p>
+
+                <p>
+                    <a href="shop.html">Shop</a>
+                </p>
+
+                <p>
+                    <a href="about.html">About</a>
+                </p>
+
+                <p>
+                    <a href="contact.html">Contact</a>
+                </p>
+
+            </div>
+
+
+            <div class="col-md-3">
+
+                <h4>Categories</h4>
+
+                <p>Rings</p>
+                <p>Necklaces</p>
+                <p>Earrings</p>
+                <p>Bracelets</p>
+
+            </div>
+
+
+            <div class="col-md-3">
+
+                <h4>Contact</h4>
+
+                <p>
+                    +91 98765 43210
+                </p>
+
+                <p>
+                    info@aureliajewellery.com
+                </p>
+
+                <p>
+                    Kochi, Kerala
+                </p>
+
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div class="text-center">
+            © 2026 Aurelia Jewellery. All Rights Reserved.
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
